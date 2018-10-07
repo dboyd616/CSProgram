@@ -2,7 +2,7 @@
 //All statements should end with a semicolon, but it's optional (we'll use semicolons in this class, but to get used to it now then have to get used to it later)
 //Just like in math, all parentheses and brackets should be balances (i.e. should have open brackets end with closing brackets)
 //When making data, you can't name things with spaces, there are several solutions to this
-//The javascript community (i.e. people that use javascript) mostly agree on camel case typing, where the first letter is lower cased and the subsequent letters are capitalized (likeThis)
+//The javascript community (i.e. people that use javascript) mostly agree on camel case typing, where the first letter is lower cased and the subsequent words are capitalized (likeThis)
 //ALternatives are snake_case, CAPITAL_CASE
 
 //Comments
@@ -27,6 +27,8 @@ console.log("Hello, World!"); //prints things to the console
 //Containers
 //A place to store data
 //There are three ways to store data in Javascript:
+
+//You should always store data using one of these keywords, if you don't JavaScript will assume it is var
 
 //Var: Short for variable Oldest way to store data, not recommended because it's vulnerable to hoisting (you don't know enough to understand hoisting now, will explain hoisting later)
 var varName = 'Raymond';
@@ -66,7 +68,7 @@ const constName = 'Raymond';
         console.log(`4 + 5 = ${sumOfFourAndFive}`);
 
         //Modulo
-            //Gives you the remainder of a division function
+            //Gives you the remainder of a division statement
             console.log(5 % 3) //prints 2, 3 fits into 5 once with 2 remaining
             const evenNumber = 2;
             console.log(evenNumber % 2 === 0 ? 'Even!' : 'Odd!'); //Great way to check for even or odd numbers
@@ -82,8 +84,8 @@ const constName = 'Raymond';
         const areWeLearningJava = false
         const isThereAProgrammingLanguageCalledBrainFuck = true // seriously, look it up lol!
 
-        //Logical Operators
-        //Used to make logical statements
+        //Conditional Operators
+        //Used to make conditional statements
         // < > less than, greater than
         // || OR
         // ! NOT
@@ -115,12 +117,12 @@ const constName = 'Raymond';
         //Falsey values: false, 0, null, undefined, NaN, and '' (empty strings)
 
     //Null
-        //Null is used when you intentionally want a value to have no value, it means nothing
+        //Null is used when you intentionally want a container to have no value, it means nothing
         const fsIsGive = null
         const numberOfFsIGive = 0 //Notice it's best to use a number here because of the name, this is a good example of when to use 0 instead of null
 
         //WATCH OUT: running typeof null will tell you null is an object, it's not, this is a bug in JavaScript that's been around since it was created, but it will never be fixed because it could break older javascript software
-        console.log(`Is null an object?: ${typeof null}`)//will print object, event though it isn't
+        console.log(`Is null an object?: ${typeof null}`)//will print object, even though it isn't
 
     //Undefined
         //Undefined should only appear when the computer tries to find something you haven't defined (aka declared) meaning that you messed up, meaning that it should NEVER appear in complete software
@@ -152,8 +154,8 @@ const constName = 'Raymond';
         const number = 3;
         if(num > 3) {
             console.log('Greater than 3!');
-        } else if (num === 3) {
-            console.log('Equal to 3!');
+        } else if (num < 3) {
+            console.log('Less than 3!');
         } else {
             console.log('Equals 3!');
         } //Notice no matter what, only one of these blocks will run
@@ -177,7 +179,7 @@ const constName = 'Raymond';
         }
 
     //FOR BLOCK
-        //Used when you want to repeat a command, and you know how many times you want to repeat it
+        //Used when you want to repeat some statements, and you know how many times you want to repeat them
         // Syntax:
         /*
         for (declare iterator; the logical statement that will stop the loop; how the iterator will change after each iteration) {
@@ -185,14 +187,14 @@ const constName = 'Raymond';
         }
         */
         const repitions = 5;
-        for (let iteration = 0; iteration < repition + 1; iteration = iteration + 1) {
+        for (let iteration = 0; iteration < repitions + 1; iteration = iteration + 1) {
             console.log(`Hey! I'm iteration ${iteration + 1}!`);
             //break;
             //continue;
         } // HINT you can use break to stop a loop early, or continue to skip an iteration
 
     //WHILE LOOP
-        //Used when you want to repeat a command, and you know how many times you want to repeat it
+        //Used when you want to repeat a command, and you don't know how many times you want to repeat it
         // Syntax: while (logical statement that will stop the block from running if it is false) { BLOCK; }
         const bigAssNumber = Number.MAX_SAFE_INTEGER; // Here I'm using JavaScript's Number constructor (The thing Javascript uses to make all numbers) and getting the biggest number Javascript can make.
         //Pretend you had no way of figuring out how big bigAssNumber was...
